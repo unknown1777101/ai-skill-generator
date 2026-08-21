@@ -8,6 +8,7 @@
     "validate-plugin": "scripts/validate_plugin.js"
   },
   "scripts": {
+    "postinstall": "node scripts/postinstall.js",
     "validate": "node scripts/validate_plugin.js .agents/skills/skill-creator",
     "validate:sample": "node scripts/validate_plugin.js plugins/sample-react-plugin"
   },
