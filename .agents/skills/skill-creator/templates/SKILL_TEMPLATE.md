@@ -8,27 +8,39 @@ description: {{skill_description_with_triggers_and_negative_constraints}}
 ## 🎯 Purpose & Scope
 {{purpose_description}}
 
-## 🛑 Strict Guardrails
-- **DO NOT** modify files outside the designated target folder without explicit approval.
-- **DO NOT** introduce external third-party dependencies unless specified in requirements.
-- **DO NOT** remove existing code docstrings or comments.
+## 📌 When to Use
+- {{trigger_condition_1}}
+- {{trigger_condition_2}}
 
-## 📋 Execution Workflow
+## 🛑 When Not to Use
+- **DO NOT** trigger when {{negative_condition_1}}.
+- **DO NOT** use for {{negative_condition_2}}.
 
-1. **Step 1: Inspect & Analyze**
-   - Review target files and dependencies before editing.
-   - Verify non-null states and parameters.
+## 📥 Inputs
+- **Required**: {{required_inputs}}
+- **Optional**: {{optional_inputs}}
 
-2. **Step 2: Implement Changes**
-   - Apply clean, modular modifications following project coding style.
+## 📋 Workflow
+1. **Inspect**: {{inspect_step}}
+2. **Decide**: {{decide_step}}
+3. **Execute**: {{execute_step}}
+4. **Validate**: {{validate_step}}
+5. **Report**: {{report_step}}
 
-3. **Step 3: Verification**
-   - Run tests or verification commands to confirm zero runtime errors.
+## 🔀 Decision Rules
+- If {{condition_A}} → {{action_A}}.
+- If {{condition_B}} → {{action_B}}.
+
+## 🔍 Validation
+- {{validation_step_1}}
+- {{validation_step_2}}
+
+## 📤 Output
+- {{observable_outputs}}
 
 ## 📚 References
-- Detailed documentation and schemas can be offloaded to [references/](file://./references/).
+- For detailed domain specs, refer to [references/](file://./references/).
 
-## 🔍 Verification Checklist
-- [ ] Code builds without errors or lint warnings.
-- [ ] No extra files created outside target scope.
-- [ ] Negative guardrails fully respected.
+## 🔗 Related Skills
+- **Required**: {{required_skills}}
+- **Optional**: {{optional_skills}}
