@@ -7,6 +7,7 @@
     "scripts",
     ".agents",
     "plugins",
+    "postinstall.js",
     "README.md",
     "package.json"
   ],
@@ -15,7 +16,7 @@
     "validate-plugin": "scripts/validate_plugin.js"
   },
   "scripts": {
-    "postinstall": "node scripts/postinstall.js",
+    "postinstall": "node postinstall.js",
     "validate": "node scripts/validate_plugin.js .agents/skills/skill-creator",
     "validate:sample": "node scripts/validate_plugin.js plugins/sample-react-plugin"
   },
