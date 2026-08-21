@@ -39,7 +39,7 @@ Reference authoritative sources (project rules, organization context, existing d
 
 ### 6. CLI Testing Tools & Auto-Installation Prompts
 When a skill requires external CLI testing/verification tools (such as **RDK** for Roblox Luau unit testing):
-- **Provide Tool Info & Link**: State clearly which tool executes the tests (e.g. `rdk test`) and provide its official installation URL ([https://github.com/roblox/rdk](https://github.com/roblox/rdk)).
+- **Provide Tool Info & Link**: State clearly which tool executes the tests (e.g. `rdk test`) and provide its official installation URL ([https://github.com/unknown1777101/roblox-development-kit](https://github.com/unknown1777101/roblox-development-kit)).
 - **Check Availability**: Perform a pre-flight check (e.g. `rdk --version`).
 - **Offer Installation**: If the tool is missing from PATH, inform the user, present the download link, and offer to execute the installation command (e.g. `cargo install rdk`) if permitted.
 
