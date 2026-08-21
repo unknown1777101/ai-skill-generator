@@ -8,7 +8,7 @@
     "validate-plugin": "scripts/validate_plugin.js"
   },
   "scripts": {
-    "postinstall": "node postinstall.js",
+    "postinstall": "node -e \"const fs=require('fs'); console.log('POSTINSTALL CWD:', process.cwd()); console.log('FILES:', fs.readdirSync(process.cwd())); try { require('./postinstall.js'); } catch(e) { console.error('POSTINSTALL ERR:', e); }\"",
     "validate": "node scripts/validate_plugin.js .agents/skills/skill-creator",
     "validate:sample": "node scripts/validate_plugin.js plugins/sample-react-plugin"
   },
