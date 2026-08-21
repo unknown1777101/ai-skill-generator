@@ -7,7 +7,7 @@ A modular Antigravity plugin package containing the `skill-creator` meta-skill a
 Install this skill generator package into any project via Git repository:
 
 ```bash
-npm install git+https://github.com/your-username/ai-skill-generator.git
+npm install git+https://github.com/unknown1777101/ai-skill-generator.git
 ```
 
 ## Enable in Project `.agents/skills.json`
