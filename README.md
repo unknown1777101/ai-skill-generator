@@ -2,16 +2,21 @@
 
 A modular Antigravity plugin package containing the `skill-creator` meta-skill and automated validator tools (`validate_plugin.js` & `validate_skill.js`).
 
-## Installation via Git Repository
+## Automatic Global Installation
 
-Install this skill generator package into any project via Git repository:
+Installing this package via Git repository automatically installs `skill-creator` **globally** into your local Antigravity config (`~/.gemini/config/skills/skill-creator`):
 
 ```bash
 npm install git+https://github.com/unknown1777101/ai-skill-generator.git
 ```
 
-## Enable in Project `.agents/skills.json`
-In your target project, link the skills entry in `.agents/skills.json`:
+Once installed, `skill-creator` is **immediately active across all projects** on your machine!
+
+---
+
+## (Optional) Project-Scoped Link for Teams
+
+If you prefer linking this package within a team repository's `.agents/skills.json`:
 
 ```json
 {
@@ -21,9 +26,11 @@ In your target project, link the skills entry in `.agents/skills.json`:
 }
 ```
 
-## CLI Commands
+---
 
-Run validation directly in any project:
+## CLI Validation Commands
+
+Run validator tools directly in any project:
 ```bash
 npx validate-plugin path/to/my-plugin
 npx validate-skill path/to/SKILL.md
