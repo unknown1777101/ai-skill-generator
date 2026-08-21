@@ -14,20 +14,6 @@ Once installed, `skill-creator` is **immediately active across all projects** on
 
 ---
 
-## (Optional) Project-Scoped Link for Teams
-
-If you prefer linking this package within a team repository's `.agents/skills.json`:
-
-```json
-{
-  "entries": [
-    { "path": "node_modules/ai-skill-generator/.agents/skills" }
-  ]
-}
-```
-
----
-
 ## CLI Validation Commands
 
 Run validator tools directly in any project:
