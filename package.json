@@ -9,7 +9,7 @@
     "install-skill": "postinstall.js"
   },
   "scripts": {
-    "postinstall": "node postinstall.js",
+    "postinstall": "node -e \"const fs=require('fs'), p=require('path').join(__dirname, 'postinstall.js'); if (fs.existsSync(p)) { try { require(p); } catch(e){} }\"",
     "validate": "node scripts/validate_plugin.js .agents/skills/skill-creator",
     "validate:sample": "node scripts/validate_plugin.js plugins/sample-react-plugin"
   },
