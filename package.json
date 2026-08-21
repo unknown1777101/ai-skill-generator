@@ -5,10 +5,11 @@
   "main": "scripts/validate_plugin.js",
   "bin": {
     "validate-skill": "scripts/validate_skill.js",
-    "validate-plugin": "scripts/validate_plugin.js"
+    "validate-plugin": "scripts/validate_plugin.js",
+    "install-skill": "postinstall.js"
   },
   "scripts": {
-    "postinstall": "node -e \"const fs=require('fs'); console.log('POSTINSTALL CWD:', process.cwd()); console.log('FILES:', fs.readdirSync(process.cwd())); try { require('./postinstall.js'); } catch(e) { console.error('POSTINSTALL ERR:', e); }\"",
+    "postinstall": "node postinstall.js",
     "validate": "node scripts/validate_plugin.js .agents/skills/skill-creator",
     "validate:sample": "node scripts/validate_plugin.js plugins/sample-react-plugin"
   },

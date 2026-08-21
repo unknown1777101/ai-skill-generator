@@ -42,14 +42,20 @@ function copyFolderRecursiveSync(source, target) {
 
 function postInstall() {
   try {
-    const globalSkillsDir = getGlobalAntigravitySkillsDir();
-    const sourceSkillCreatorDir = path.join(__dirname, '.agents', 'skills', 'skill-creator');
-    const targetSkillCreatorDir = path.join(globalSkillsDir, 'skill-creator');
-
-    if (!fs.existsSync(sourceSkillCreatorDir)) {
-      console.log(`${COLORS.yellow}[⚠ WARN]${COLORS.reset} Source skill-creator directory not found at ${sourceSkillCreatorDir}`);
+    const cwd = process.cwd();
+    // Guard against npm staging directory non-existence during global git install
+    if (!fs.existsSync(cwd)) {
       return;
     }
+
+    const globalSkillsDir = getGlobalAntigravitySkillsDir();
+    const sourceSkillCreatorDir = path.join(__dirname, '.agents', 'skills', 'skill-creator');
+
+    if (!fs.existsSync(sourceSkillCreatorDir)) {
+      return;
+    }
+
+    const targetSkillCreatorDir = path.join(globalSkillsDir, 'skill-creator');
 
     console.log(`\n${COLORS.bright}=== Antigravity Skill Generator Auto-Installer ===${COLORS.reset}`);
     console.log(`Installing skill-creator to global Antigravity config...`);
@@ -60,7 +66,7 @@ function postInstall() {
     console.log(`         ${COLORS.cyan}${targetSkillCreatorDir}${COLORS.reset}\n`);
     console.log(`Skill-creator is now active GLOBALLY across all projects on your machine!\n`);
   } catch (err) {
-    console.log(`${COLORS.yellow}[⚠ WARN]${COLORS.reset} Could not auto-install to global skills directory: ${err.message}`);
+    // Graceful fallback - do not fail npm install
   }
 }
 
