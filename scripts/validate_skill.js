@@ -92,6 +92,22 @@ function validateSkill(targetPath) {
   let hasErrors = false;
   let warningCount = 0;
 
+  // Check README.md existence and basic validity
+  const readmeFilePath = path.join(skillDir, 'README.md');
+  if (!fs.existsSync(readmeFilePath)) {
+    logFail(`README.md file not found at: ${readmeFilePath}`);
+    hasErrors = true;
+  } else {
+    logPass('Found README.md in skill directory.');
+    const readmeContent = fs.readFileSync(readmeFilePath, 'utf8');
+    if (!readmeContent.includes('#') || readmeContent.length < 20) {
+      logFail('README.md is empty or missing title header.');
+      hasErrors = true;
+    } else {
+      logPass('README.md structure is valid.');
+    }
+  }
+
   // 1. Frontmatter Validation
   const fmResult = parseFrontmatter(content);
   if (fmResult.error) {

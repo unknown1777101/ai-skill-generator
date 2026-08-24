@@ -106,6 +106,17 @@ description: <specific activation description explaining capability, positive tr
 
 ---
 
+## 📋 README.md Standard
+Every generated or revised skill must have a `README.md` file in the skill's root folder explaining what the skill actually does and providing a step-by-step usage guide (Panduan Penggunaan) for developers/agents.
+
+It should follow this structure:
+1. **Title**: Name of the skill.
+2. **What is this Skill for?**: Clear and concise description of the skill's capabilities and purpose.
+3. **Usage Guide**: Instructions on how to trigger the skill, required inputs, and the workflow to execute.
+4. **Examples**: Quick templates or input/output examples.
+
+---
+
 ## 🏷️ Naming Standard
 - Use lowercase **kebab-case** (e.g., `skill-authoring`, `voxel-modeling`, `frontend-development`).
 - Avoid CamelCase, snake_case, spaces, or generic names like `skill1` or `awesomeSkill`.

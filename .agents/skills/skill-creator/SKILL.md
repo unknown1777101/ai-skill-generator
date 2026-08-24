@@ -30,7 +30,9 @@ Its primary goals are:
    - **Current Project Folder**: Save in the active workspace under `.agents/skills/<skill-name>/` or `plugins/<plugin-name>/`.
    - **Global Antigravity Config**: Save globally under `~/.gemini/config/skills/<skill-name>/` (on Windows: `%USERPROFILE%\.gemini\config\skills\<skill-name>\`).
    - **Custom Path**: Save in a path explicitly specified by the user.
-4. **Scaffold Structure**: Generate the files in the chosen target location with mandatory headers (*Purpose*, *When to Use*, *When Not to Use*, *Inputs*, *Workflow*, *Decision Rules*, *Validation*, *Output*).
+4. **Scaffold Structure**: Generate the files in the chosen target location:
+   - `SKILL.md`: Follow the standard template with headers (*Purpose*, *When to Use*, *When Not to Use*, *Inputs*, *Workflow*, *Decision Rules*, *Validation*, *Output*).
+   - `README.md`: Explaining the skill's purpose (for what) and a usage guide (Panduan Penggunaan) for developers/agents.
 5. **Validate**: Run `node scripts/validate_plugin.js` (or `validate_skill.js`) on the saved path.
 
 ### 2. AUDIT Mode (Evaluate Skill Quality 0–100)
