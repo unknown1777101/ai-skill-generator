@@ -6,7 +6,8 @@
   "bin": {
     "validate-skill": "scripts/validate_skill.js",
     "validate-plugin": "scripts/validate_plugin.js",
-    "install-skill": "postinstall.js"
+    "install-skill": "postinstall.js",
+    "skill-creator": "scripts/skill-creator.js"
   },
   "scripts": {
     "postinstall": "node -e \"const fs=require('fs'), p=require('path').join(__dirname, 'postinstall.js'); if (fs.existsSync(p)) { try { require(p); } catch(e){} }\"",

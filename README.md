@@ -22,8 +22,16 @@ npm install git+https://github.com/unknown1777101/ai-skill-generator.git
 
 ---
 
-## 🛠️ CLI Validation Commands
+## 🛠️ CLI Commands
 
+### Manage the skill-creator meta-skill
+You can cleanly update or uninstall the global `skill-creator` meta-skill directory using the CLI:
+```bash
+npx skill-creator update      # Deletes the old global skill folder and copies the latest files
+npx skill-creator uninstall   # Deletes the global skill folder
+```
+
+### Run Validator Tools
 Run validator tools directly in any project:
 ```bash
 npx validate-plugin path/to/my-plugin
@@ -38,9 +46,8 @@ npx validate-skill path/to/SKILL.md
 To remove the package globally:
 ```bash
 npm uninstall -g ai-skill-generator
+npx skill-creator uninstall
 ```
-
-*(Optional: To remove the installed global skill folder, delete `~/.gemini/config/skills/skill-creator`)*
 
 ### Uninstall Local Project
 To remove the package from a local project:
