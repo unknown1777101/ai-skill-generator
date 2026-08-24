@@ -49,7 +49,7 @@ When a skill requires external CLI testing/verification tools (such as **RDK** f
 
 Every skill operation must be classified under one of the following modes:
 
-- **CREATE**: Create a new skill from scratch.
+- **CREATE**: Create a new skill from scratch. **MANDATORY**: You must explicitly ask the user where they want to save the new skill. Give them the options of (1) the current project folder (local workspace under `.agents/skills/<skill-name>/` or `plugins/<plugin-name>/`), (2) the global Antigravity config (`~/.gemini/config/skills/<skill-name>/`), or (3) a custom path. Write files only to the selected path.
 - **AUDIT**: Evaluate an existing skill against the quality gate (scored 0–100).
 - **IMPROVE**: Refine an existing skill without changing its core purpose.
 - **SPLIT**: Break an oversized or multi-responsibility skill into smaller skills.

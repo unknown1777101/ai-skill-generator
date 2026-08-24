@@ -19,14 +19,19 @@ Its primary goals are:
 - **DO NOT** use vague instructions like "do it properly". Use observable, deterministic rules.
 - **DO NOT** silently invent missing values or project information. Ask the user if required inputs are unknown.
 - **DO NOT** consider any skill complete until `node scripts/validate_plugin.js` or `node scripts/validate_skill.js` passes with 100% compliance.
+- **MUST ASK FOR OUTPUT PATH**: When generating a new skill, you **must** explicitly ask the user where the output should be saved. Do not make assumptions.
 
 ## 📌 Lifecycle Modes & Workflows
 
 ### 1. CREATE Mode (New Skill / Plugin)
 1. **Identify Single Purpose**: Confirm single primary responsibility and kebab-case name.
 2. **Define Triggers**: Write specific description with positive activation terms AND negative constraints ("DO NOT trigger for...").
-3. **Scaffold Structure**: Generate `plugins/<plugin-name>/` or `skills/<skill-name>/` with mandatory headers (*Purpose*, *When to Use*, *When Not to Use*, *Inputs*, *Workflow*, *Decision Rules*, *Validation*, *Output*).
-4. **Validate**: Run `node scripts/validate_plugin.js` (or `validate_skill.js`).
+3. **Ask for Output Path (MANDATORY)**: Ask the user where they want the generated skill files to be saved. You must present the following options:
+   - **Current Project Folder**: Save in the active workspace under `.agents/skills/<skill-name>/` or `plugins/<plugin-name>/`.
+   - **Global Antigravity Config**: Save globally under `~/.gemini/config/skills/<skill-name>/` (on Windows: `%USERPROFILE%\.gemini\config\skills\<skill-name>\`).
+   - **Custom Path**: Save in a path explicitly specified by the user.
+4. **Scaffold Structure**: Generate the files in the chosen target location with mandatory headers (*Purpose*, *When to Use*, *When Not to Use*, *Inputs*, *Workflow*, *Decision Rules*, *Validation*, *Output*).
+5. **Validate**: Run `node scripts/validate_plugin.js` (or `validate_skill.js`) on the saved path.
 
 ### 2. AUDIT Mode (Evaluate Skill Quality 0–100)
 Score skill against the 100-point quality gate:
@@ -42,8 +47,8 @@ Score skill against the 100-point quality gate:
 - **MERGE**: If two skills have >80% overlap or users cannot distinguish triggers, merge them cleanly.
 
 ## 📥 Inputs & Outputs
-- **Inputs**: Skill/Plugin domain, purpose, activation conditions, target files.
-- **Output**: Validated `SKILL.md` (or full Antigravity Plugin package) passing quality gate.
+- **Inputs**: Skill/Plugin domain, purpose, activation conditions, target files, and **chosen output path**.
+- **Output**: Validated `SKILL.md` (or full Antigravity Plugin package) passing quality gate, saved at the location chosen by the user.
 
 ## 📚 References
 - Complete authoring standard & scoring guide: [references/skill-authoring-guide.md](file://./references/skill-authoring-guide.md).
