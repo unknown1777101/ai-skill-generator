@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Post-install script for ai-skill-generator
+ * Post-install script for ai-skill-creator
  * Automatically installs skill-creator into global Antigravity skills directory.
  */
 
@@ -57,7 +57,7 @@ function postInstall() {
 
     const targetSkillCreatorDir = path.join(globalSkillsDir, 'skill-creator');
 
-    console.log(`\n${COLORS.bright}=== Antigravity Skill Generator Auto-Installer ===${COLORS.reset}`);
+    console.log(`\n${COLORS.bright}=== Antigravity Skill Creator Auto-Installer ===${COLORS.reset}`);
     console.log(`Installing skill-creator to global Antigravity config...`);
 
     copyFolderRecursiveSync(sourceSkillCreatorDir, targetSkillCreatorDir);

@@ -1,7 +1,7 @@
 {
-  "name": "ai-skill-generator",
+  "name": "ai-skill-creator",
   "version": "1.0.0",
-  "description": "Antigravity Skill Generator & Plugin Validator Package",
+  "description": "Antigravity Skill Creator & Plugin Validator Package",
   "main": "scripts/validate_plugin.js",
   "bin": {
     "validate-skill": "scripts/validate_skill.js",
@@ -19,7 +19,7 @@
     "skills",
     "plugin",
     "ai-agent",
-    "skill-generator"
+    "skill-creator"
   ],
   "author": "Anzar",
   "license": "MIT"
