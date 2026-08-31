@@ -24,33 +24,13 @@ npm install git+https://github.com/unknown1777101/ai-skill-creator.git
 
 ## 🛠️ CLI Commands
 
-### Manage the skill-creator meta-skill
-You can cleanly update or uninstall the global `skill-creator` meta-skill directory using the CLI:
-```bash
-npx skill-creator update      # Deletes the old global skill folder and copies the latest files
-npx skill-creator uninstall   # Deletes the global skill folder
-```
+All CLI commands can be executed directly in the terminal (PowerShell / CMD) without `npx` after running `npm link` or `npm install -g`:
 
-### Run Validator Tools
-Run validator tools directly in any project:
-```bash
-npx validate-plugin path/to/my-plugin
-npx validate-skill path/to/SKILL.md
-```
+| Action | Primary Command | 1-Word Shortcut Alias |
+| :--- | :--- | :--- |
+| **Update / Install Global** | `skill-creator update` | `skill-creator-update` |
+| **Uninstall Global** | `skill-creator uninstall` | `skill-creator-uninstall` |
+| **Validate Skill** | `skill-creator validate <path>` | `skill-creator-validate <path>`<br>`skill-validate <path>`<br>`validate-skill <path>` |
+| **Validate Plugin** | `skill-creator validate-plugin <path>` | `plugin-validate <path>`<br>`validate-plugin <path>` |
 
----
-
-## 🗑️ Uninstallation
-
-### Uninstall Global
-To remove the package globally:
-```bash
-npm uninstall -g ai-skill-creator
-npx skill-creator uninstall
-```
-
-### Uninstall Local Project
-To remove the package from a local project:
-```bash
-npm uninstall ai-skill-creator
-```
+*(Note: You can also execute via `npx skill-creator ...` if the package is not installed globally).*

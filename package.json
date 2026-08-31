@@ -4,10 +4,15 @@
   "description": "Antigravity Skill Creator & Plugin Validator Package",
   "main": "scripts/validate_plugin.js",
   "bin": {
+    "skill-creator": "scripts/skill-creator.js",
+    "skill-creator-update": "scripts/skill-creator-update.js",
+    "skill-creator-uninstall": "scripts/skill-creator-uninstall.js",
+    "skill-creator-validate": "scripts/skill-creator-validate.js",
     "validate-skill": "scripts/validate_skill.js",
     "validate-plugin": "scripts/validate_plugin.js",
-    "install-skill": "postinstall.js",
-    "skill-creator": "scripts/skill-creator.js"
+    "skill-validate": "scripts/validate_skill.js",
+    "plugin-validate": "scripts/validate_plugin.js",
+    "install-skill": "postinstall.js"
   },
   "scripts": {
     "postinstall": "node -e \"const fs=require('fs'), p=require('path').join(__dirname, 'postinstall.js'); if (fs.existsSync(p)) { try { require(p); } catch(e){} }\"",
