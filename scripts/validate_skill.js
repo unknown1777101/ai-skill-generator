@@ -156,6 +156,13 @@ function validateSkill(targetPath) {
         logPass('Description includes explicit trigger boundaries/negative constraints.');
       }
     }
+
+    // Category Check (Optional / Recommended metadata)
+    if (data.category) {
+      logPass(`Found category metadata: "${data.category}".`);
+    } else {
+      logInfo('No explicit "category" field in frontmatter (Optional but recommended for multi-domain catalogs).');
+    }
   }
 
   // 2. Line Count & Context Budgeting Check

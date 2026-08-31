@@ -68,6 +68,7 @@ Every generated or revised `SKILL.md` should follow this standard structure:
 ```markdown
 ---
 name: <lowercase-kebab-case-name>
+category: <Category/Domain>
 description: <specific activation description explaining capability, positive triggers, and negative constraints>
 ---
 
@@ -103,6 +104,35 @@ description: <specific activation description explaining capability, positive tr
 ## 🔗 Related Skills
 [Dependencies classified as Required, Optional, or Related]
 ```
+
+---
+
+## 📁 Folder Organization Standard: Nested Categories
+
+When organizing multiple skills across different domains or tech stacks (e.g. Roblox, Unity, Git, DevOps, Web), **nested domain subdirectories** are recommended over flat prefixes to keep directories clean and scalable:
+
+```text
+skills/
+├── roblox/
+│   ├── SKILL.md                  # (Optional) Main catalog index for Roblox
+│   ├── animation-system/
+│   │   ├── SKILL.md
+│   │   └── README.md
+│   └── object-pooling/
+│       ├── SKILL.md
+│       └── README.md
+└── unity/
+    ├── clean-arch/
+    │   ├── SKILL.md
+    │   └── README.md
+    └── tools/
+        ├── SKILL.md
+        └── README.md
+```
+
+### Frontmatter Metadata:
+- **`name`**: Unique lowercase kebab-case identifier (e.g. `roblox-animation-system` or `animation-system`).
+- **`category`**: Domain / Category tag (e.g. `Roblox`, `Unity`, `Git`, `Dev Tools`).
 
 ---
 

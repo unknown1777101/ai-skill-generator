@@ -1,5 +1,6 @@
 ---
 name: {{skill_name}}
+category: {{skill_category}}
 description: {{skill_description_with_triggers_and_negative_constraints}}
 ---
 

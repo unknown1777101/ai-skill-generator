@@ -1,5 +1,6 @@
 ---
 name: skill-creator
+category: Meta
 description: Designs, creates, audits, improves, splits, merges, updates, and maintains Agent Skills for Google Antigravity using the SKILL.md standard. Use when creating, reviewing, or architecture-designing skills. DO NOT trigger for general application code writing or bug fixing.
 ---
 
@@ -24,14 +25,14 @@ Its primary goals are:
 ## 📌 Lifecycle Modes & Workflows
 
 ### 1. CREATE Mode (New Skill / Plugin)
-1. **Identify Single Purpose**: Confirm single primary responsibility and kebab-case name.
-2. **Define Triggers**: Write specific description with positive activation terms AND negative constraints ("DO NOT trigger for...").
+1. **Identify Single Purpose & Category**: Confirm single primary responsibility, domain category (e.g. `Roblox`, `Unity`, `Git`, `Dev Tools`), and kebab-case name.
+2. **Define Triggers & Metadata**: Write specific description with positive activation terms AND negative constraints ("DO NOT trigger for..."), plus `category` in YAML frontmatter.
 3. **Ask for Output Path (MANDATORY)**: Ask the user where they want the generated skill files to be saved. You must present the following options:
-   - **Current Project Folder**: Save in the active workspace under `.agents/skills/<skill-name>/` or `plugins/<plugin-name>/`.
-   - **Global Antigravity Config**: Save globally under `~/.gemini/config/skills/<skill-name>/` (on Windows: `%USERPROFILE%\.gemini\config\skills\<skill-name>\`).
+   - **Current Project Folder**: Save in the active workspace under `.agents/skills/<category>/<skill-name>/` (or `.agents/skills/<skill-name>/`) or `plugins/<plugin-name>/`.
+   - **Global Antigravity Config**: Save globally under `~/.gemini/config/skills/<category>/<skill-name>/` (on Windows: `%USERPROFILE%\.gemini\config\skills\<category>\<skill-name>\`).
    - **Custom Path**: Save in a path explicitly specified by the user.
 4. **Scaffold Structure**: Generate the files in the chosen target location:
-   - `SKILL.md`: Follow the standard template with headers (*Purpose*, *When to Use*, *When Not to Use*, *Inputs*, *Workflow*, *Decision Rules*, *Validation*, *Output*).
+   - `SKILL.md`: Follow the standard template with frontmatter (`name`, `category`, `description`) and headers (*Purpose*, *When to Use*, *When Not to Use*, *Inputs*, *Workflow*, *Decision Rules*, *Validation*, *Output*).
    - `README.md`: Explaining the skill's purpose (for what) and a usage guide (Panduan Penggunaan) for developers/agents.
 5. **Validate**: Run `node scripts/validate_plugin.js` (or `validate_skill.js`) on the saved path.
 
